@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series Generator</title>
+    <style>
+        body {
+            background-color: #001f3f; /* Dark blue background */
+            color: #ffffff; /* White text */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6); /* Translucent background */
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block;
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.pinimg.com/originals/07/e4/a3/07e4a398d7f418a2eb49052f7271b495.gif') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        button {
+            background-color: #007bff; /* Blue button */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fibonacci Series Generator</h1>
+        <button onclick="generateFibonacci(10)">Generate Series (10)</button>
+        <button onclick="generateFibonacci(20)">Generate Series (20)</button>
+        <button onclick="generateFibonacci(30)">Generate Series (30)</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function generateFibonacci(n) {
+            let fib = [0, 1];
+            for (let i = 2; i < n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            displayFibonacci(fib);
+        }
+
+        function displayFibonacci(series) {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = series.join(', ');
+        }
+    </script>
+</body>
+</html>
