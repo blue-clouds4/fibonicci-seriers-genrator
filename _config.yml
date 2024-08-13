@@ -1,6 +1,0 @@
-title: generative fibonicci series
-logo: /img.jpg
-description: this is a website that randomly generates fibonnici series till 30
-show_downloads: true
-google_analytics:
-theme: jekyll-theme-minimal
